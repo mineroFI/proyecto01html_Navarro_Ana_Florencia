@@ -1,0 +1,336 @@
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fbeafc; 
+    color: #222;
+}
+
+/* Layout principal */
+.layout {
+    display: grid;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 100px 1fr 140px;
+    min-height: 100vh;
+    background: #fbeafc;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8c6e7; 
+    border-bottom: 2px solid #e3a7c0;
+    gap: 30px;
+    height: 100%;
+}
+
+.header img.cat-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid #e3a7c0;
+    background: #fff;
+}
+
+.header h1 {
+    font-size: 2.1rem;
+    color: #7c3a6e;
+    text-align: center;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #b46fa7;
+    text-align: center;
+}
+
+/* Sidebar */
+.nav-container {
+    grid-area: sidebar;
+    background: #e9d6f7; 
+    border-right: 2px solid #e3a7c0;
+    padding: 20px 0 0 0;
+    min-width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding-left: 20px;
+}
+
+.nav a {
+    color: #a84d8c;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.08rem;
+    transition: color 0.2s;
+}
+
+.nav a:hover {
+    color: #e573b7;
+    text-decoration: underline;
+}
+
+/* Main */
+.main {
+    grid-area: main;
+    padding: 30px 30px 0 30px;
+    background: #fff0fa;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 400px;
+}
+
+/* Productos */
+.product-container {
+    width: 220px;
+    background: #fff;
+    border: 1.5px solid #e3a7c0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px #e3a7c055;
+    margin-bottom: 20px;
+    transition: box-shadow 0.2s;
+}
+
+.product-container:hover {
+    box-shadow: 0 4px 16px #e3a7c088;
+}
+
+.card-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    padding: 18px 10px;
+}
+
+.product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid #e3a7c0;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background: #fbeafc;
+}
+
+.card-product h2 {
+    font-size: 1.1rem;
+    color: #a84d8c;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.product-description {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #e573b7;
+    font-size: 1.05rem;
+    text-align: center;
+}
+
+/* Ofertas */
+#offers {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.offers-title {
+    color: #b0468a;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.offers-container {
+    background: #fff;
+    border: 1.5px solid #e3a7c0;
+    border-radius: 8px;
+    padding: 18px 16px;
+    min-width: 220px;
+    flex: 1 1 220px;
+    box-shadow: 0 2px 6px #e3a7c055;
+}
+
+.offer-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.offer-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    background: #fbeafc;
+}
+
+.offers-container {
+    background: #fff;
+    border: 1.5px solid #e3a7c0;
+    border-radius: 8px;
+    padding: 18px 16px;
+    min-width: 220px;
+    flex: 1 1 220px;
+    box-shadow: 0 2px 6px #e3a7c055;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#offers {
+    flex-direction: column;
+}
+
+@media (min-width: 700px) {
+    #offers {
+        flex-direction: column;
+    }
+    #offers .offers-list {
+        display: flex;
+        gap: 30px;
+        width: 100%;
+    }
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background: #f8c6e7;
+    border-top: 2px solid #e3a7c0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 25px 30px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-section {
+    min-width: 180px;
+    max-width: 220px;
+}
+
+.footer-section h3 {
+    font-size: 1.05rem;
+    color: #7c3a6e;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 6px;
+}
+
+.footer-section a {
+    color: #a84d8c;
+    text-decoration: none;
+    font-size: 0.97rem;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+    color: #e573b7;
+}
+
+.footer-section p {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 4px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 120px 1fr;
+    }
+    .footer-container {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .footer-section {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .layout {
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 60px 1fr 220px;
+    }
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+    .nav-container {
+        padding: 0;
+        min-width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #e3a7c0;
+    }
+    .main {
+        padding: 10px;
+        gap: 16px;
+    }
+    .footer {
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 10px;
+    }
+}
+
