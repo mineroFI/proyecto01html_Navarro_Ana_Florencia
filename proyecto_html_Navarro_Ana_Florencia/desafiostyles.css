@@ -1,0 +1,19 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: #000000;
+    border-radius: 0% 50% 50% 50%;
+    margin: 0px auto;
+}
+
+div:nth-child(1) {
+    transform: translate(50px, 0px) rotate(90deg);
+}
+#divmedio {
+    background-color: #6b6666;
+    transform: translate(30px, 0px) rotate(90deg);
+}
+
+div:nth-child(3) {
+    transform: translate(0px, 0px) rotate(90deg);
+}
